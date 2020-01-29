@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Amplify, { Predictions} from 'aws-amplify';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import awsconfig from './aws-exports';
+import Rekognition from './Rekognition';
 
 Amplify.configure(awsconfig);
 Amplify.addPluggable( new AmazonAIPredictionsProvider() );
@@ -24,15 +25,19 @@ function App() {
 	}
 
 	return (
-      <div align = "center" style={{backgroundColor: "lightblue"}}>
-        <div>
-          <p>Text Translation English -> Norwegian
-			 </p>
-          <input value={sourceText} onChange={setText}></input>
-          <button onClick={translate}>Click Here to Translate</button>
-          <p>{response}</p>
-        </div>
-      </div>
+		<div>
+			<div align = "center" style={{backgroundColor: "lightblue"}}>
+			<div>
+				<p>Text Translation English -> Norwegian
+				</p>
+				<input value={sourceText} onChange={setText}></input>
+				<button onClick={translate}>Click Here to Translate</button>
+				<p>{response}</p>
+			</div>
+			</div>
+
+			<Rekognition />
+		</div>
     );
 }
 
