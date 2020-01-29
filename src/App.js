@@ -26,7 +26,8 @@ function App() {
 	return (
       <div align = "center" style={{backgroundColor: "lightblue"}}>
         <div>
-          <p>Text Translation</p>
+          <p>Text Translation English -> Norwegian
+			 </p>
           <input value={sourceText} onChange={setText}></input>
           <button onClick={translate}>Click Here to Translate</button>
           <p>{response}</p>
